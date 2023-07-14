@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../utilities/colours.dart';
+import '../utilities/global_changes.dart';
 
 class MobileScreenLayout extends StatefulWidget {
   const MobileScreenLayout({super.key});
@@ -43,14 +44,9 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
         controller: pageController,
         onPageChanged:
             onPageChanged, //onPageChanged is a function that is called whenever the page in the center of the viewport changes.
-        children: const [
-          Text('feed'),
-          Text('search'),
-          Text('add post'),
-          Text('notifications'),
-          Text('profile'),
-        ],
+
         physics: const NeverScrollableScrollPhysics(),
+        children: homeScreenItems,
       ),
       bottomNavigationBar: CupertinoTabBar(
         backgroundColor: mobileBackgroundColor,
